@@ -1,0 +1,32 @@
+table{
+	width: 100%;
+	// @include font-size($p-font-sizes);
+	color: $table-text-color;
+}
+
+caption{
+	padding: $table-padding ($table-padding / 2);
+	text-align: left;
+	background-color: $table-color-caption;
+	// @include font-size($h4-font-sizes);
+}
+
+tbody{
+	text-align: left;
+}
+
+tr{
+	border-bottom: $table-border;
+	background-color: $table-color-1st-row;
+
+	&:nth-child(1){
+		background-color: $table-color-header;
+	}
+	&:nth-child(even){
+		background-color: $table-color-2nd-row;
+	}
+}
+
+th, td{
+	padding: $table-padding ($table-padding / 2);
+}

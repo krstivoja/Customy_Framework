@@ -1,0 +1,239 @@
+//	------------------------------------------------//
+//	Project name:        Customy
+//	Project URI:         http://getcustomy.com/
+//	Version:             0.1.0
+//	Description:         Child theme of TwentyTwelve.
+//	Author:              Marko Krstic
+//	GitHub Project URI:  https://github.com/krstivoja/customy
+//	GitHub Branch:       master
+//	------------------------------------------------//
+
+
+
+
+//	------------------------------------------------//
+//	Imports
+
+//	Normalize
+		@import '_normalize'; //normalize.css v3.0.2
+
+//	Customy additonal reset
+		@import '_reset';
+
+
+//	Fonts import - online
+		@import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic,300,300italic);
+//	Fonts import - from own server
+		@import '_fonts';
+
+		// $font-family: 'Roboto', sans-serif;
+		$font-family: sans-serif;
+
+//	------------------------------------------------//
+
+
+
+
+//	------------------------------------------------//
+//	Base styles
+
+//	-  Colors
+//	-  Brakepoints
+//	------------------------------------------------//
+
+
+//	Colors
+$pri      : #00adef;
+$sec      : #f0ad4e;
+$alert    : #d9534f;
+$sucess   : #5cb85c;
+$info     : #5bc0de;
+
+
+//	Brakepoints
+$breakpoints: (
+	null          : 0,
+	mobile        :	640px,
+	tablet        :	768px,
+	laptop        :	992px,
+	desktop       :	1200px,
+	desktopxx     :	1440px
+
+);
+
+
+
+
+//	------------------------------------------------//
+//	Typography
+
+//	-  Fonts
+//	-  h1-h6
+//	-  p
+//	-  a
+//	-  list ul
+//	------------------------------------------------//
+
+
+//	h1-h6
+$h1-font-sizes: (
+	null      : 30px,
+	tablet    : 48px
+);
+
+$h2-font-sizes: (
+	null      : 24px,
+	tablet    : 40px
+);
+
+$h3-font-sizes: (
+	null      : 20px,
+	tablet    : 36px
+);
+
+$h4-font-sizes: (
+	null      : 16px,
+	tablet    : 24px
+);
+
+$h5-font-sizes: (
+	null      : 12px,
+	tablet    : 16px
+);
+
+$h6-font-sizes: (
+	null      : 12px,
+	tablet    : 14px
+);
+
+
+// p, a, ul, ol
+$p-font-sizes: (
+	null      : 12px,
+	tablet    : 14px
+);
+
+
+// a
+$link-color       : $pri; // $pri, $sec, $alert, $sucess, $info or custom: red, blue, #123456, rgba(0, 0, 0, 0.3)
+$link-decoration  : none;	//	none,	line-through, overline,  underline
+
+
+//ul
+$list-style-icon    : 'none'; // None = Default. Replace 'none' with a presefered simbol: &, % ...
+$list-style-paddign : 10px;
+
+
+//	Blockquotes
+$blockquote-line-width    : 5px;
+$blockquote-line-color    : rgba(0, 0, 0, 0.1);
+$blockquote-line-padding  : 20px;
+
+
+
+
+//	------------------------------------------------//
+//	Components
+
+// 	-  Forms
+// 	-  Buttons
+// 	-  Tables
+//	------------------------------------------------//
+
+
+// 	-  Forms
+$form-bg-color      : $pri;
+$form-color         : white;
+$form-placeholder   : red;
+$form-border        : 1px solid $pri;
+$form-padding       : 15px;
+$form-radius        : 0px;
+
+
+
+// 	-  Buttons
+
+//	Buttons default settings
+$btn-radius : 5px;
+$btn-padding : 20px;
+
+//	-		Buttons Colors
+//	-		Create classes and set colours. Every class get automaticly invert class (btn-inv)
+$buttons:(
+	default-btn      : lightgray,
+	pri-btn          : $pri,
+	sec-btn          : $sec,
+	alert-btn        : $alert,
+	sucess-btn       : $sucess,
+	info-btn         : $info
+);
+
+
+
+//	Tables
+$table-text-color     : black;
+$table-border         : 1px solid lightgray;
+$table-padding        : 10px;
+$table-color-caption  : $sec;
+$table-color-header   : $pri;
+$table-color-1st-row  : white;
+$table-color-2nd-row  : lightgray;
+
+
+
+
+//	------------------------------------------------//
+//	Mixins
+		@import '_mediaqueries';
+		@import '_basicsettings';
+		@import '_typography';
+		@import '_buttons';
+		@import '_forms';
+		@import '_tables';
+//	------------------------------------------------//
+
+
+
+//	------------------------------------------------//
+//	In version 0.1.1
+//	------------------------------------------------//
+
+//	------------------------------------------------//
+//	Partials
+
+// 	-	Navigation
+			@import '_partials/_navigation';
+
+// 	-	Back to top
+			@import '_partials/_back-to-top';
+
+// 	-	Header
+			@import '_partials/_header';
+
+// 	-	Footer
+			@import '_partials/_footer';
+
+// 	-	Posts List
+			@import '_partials/_post-list';
+
+
+//	------------------------------------------------//
+
+//	------------------------------------------------//
+//	Layout
+
+
+// 	-	Home
+		@import '_layout/_home';
+
+// 	-  Projects
+		@import '_layout/_projects';		
+
+// 	-	Single
+		@import '_layout/_single';
+
+//	------------------------------------------------//
+
+
+
+/*	Use it, Share it, Contibure    ::    https://github.com/krstivoja/customy */

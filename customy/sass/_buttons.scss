@@ -1,0 +1,59 @@
+// Default for all buttons
+
+.btn{
+		border: 0px solid transparent;
+		border-radius: $btn-radius;
+    padding: ($btn-padding / 2) $btn-padding;
+
+		// Same as paragraph
+		@include font-size($p-font-sizes);
+
+		// Common for all buttons
+		width: inherit;
+		display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+		font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+		text-transform: none;
+}
+
+
+@each $key, $value in $buttons {
+	.#{$key} {
+
+    color: white;
+		background-color: $value;
+    border: 1px solid $value;
+
+    @extend .btn;
+
+    &:hover{
+      background-color: darken($value, 15);
+      border: 1px solid darken($value, 15);
+    }
+
+  }
+
+	.#{$key}-inv {
+
+		color: $value;
+    background-color: transparent;
+    border: 1px solid $value;
+
+    @extend .btn;
+
+    &:hover{
+      color: darken($value, 15);
+      border: 1px solid darken($value, 15);
+    }
+
+  }
+}

@@ -1,0 +1,51 @@
+// Placeholder
+::-webkit-input-placeholder,	:-moz-placeholder,	::-moz-placeholder,	:-ms-input-placeholder {
+	color: $form-placeholder;
+}
+
+// Forms global
+input, textarea{
+
+	background-color: $form-bg-color;
+	color: $form-color !important;
+	border: $form-border;
+
+	padding: ($form-padding / 2) $form-padding !important;
+
+	@include font-size($p-font-sizes);
+
+	margin-bottom: 10px;
+	margin-top: 10px;
+	background-image: none;
+	box-shadow: none;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+
+
+fieldset{
+	margin-top: 10px; }
+
+
+[type="file"]{
+	color: inherit !important;
+	border: 0px;
+	background-color: transparent;
+	padding: 0 !important;	}
+
+[type="checkbox"], [type="radio"]{
+	margin: 10px;	}
+
+
+select {
+    padding: ($form-padding / 2) $form-padding;
+		background-color: $form-bg-color;
+		color: $form-color !important;
+		border: $form-border;
+		border-radius: $form-radius;
+
+		@include font-size($p-font-sizes);
+
+		margin: 10px 0;
+		display: block;
+    background-image: none;
+		box-shadow: none;
+		transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }

@@ -1,0 +1,13 @@
+//  Welcome to Customy reset.
+//  Here you can find aditional reset that Normalize.css didn't cover it.
+
+//  Box sizing
+html {
+  box-sizing: border-box;  }
+
+*, *:before, *:after, *:focus {
+  box-sizing: inherit;  }
+
+//  Removes blue glow
+input:focus, select:focus {
+  outline:none;  }

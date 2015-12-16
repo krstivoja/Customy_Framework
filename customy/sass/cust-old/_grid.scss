@@ -1,0 +1,56 @@
+// @mixin mob {
+//   @media (min-width: #{		$mobile		}) {
+//     @content;
+//   }
+// }
+// @mixin tab {
+//   @media (min-width: #{		$tablet		}) {
+//     @content;
+//   }
+// }
+// @mixin lap {
+//   @media (min-width: #{		$laptop		}) {
+//     @content;
+//   }
+// }
+// @mixin desk {
+//   @media (min-width: #{		$desktop	}) {
+//     @content;
+//   }
+// }
+
+
+
+@mixin gutters($gutter-map, $gutter-breakpoints: $breakpoints) {
+  @each $gutter-breakpoint, $gutter-size in $gutter-map {
+    @if $gutter-breakpoint == null {
+      padding: $gutter-size;
+    }
+    @else {
+      @if map-has-key($gutter-breakpoints, $gutter-breakpoint) {
+        $gutter-breakpoint: map-get($gutter-breakpoints, $gutter-breakpoint);
+      }
+      @media screen and (min-width: $gutter-breakpoint) {
+        padding: 0  $gutter-size;
+      }
+    }
+  }
+}
+
+
+.container{
+  // max-width: map-get($breakpoints, desktop);
+  // background-color: #dcdcdc;
+  margin: auto;
+
+  @include gutters($gutters-containers);
+}
+
+
+.column{
+	// max-width: map-get($breakpoints, desktop);
+	background-color: #dcdcdc;
+  margin: auto;
+
+  @include gutters($gutters-columns);
+}

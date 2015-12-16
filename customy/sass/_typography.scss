@@ -1,0 +1,99 @@
+body{
+	font-family: 	$font-family; }
+
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+
+  @include make-font-size($fs-font-size); }
+
+  @else {
+    @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+      $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint); }
+      @media screen and (min-width: $fs-breakpoint) {
+      @include make-font-size($fs-font-size); }
+    }
+  }
+
+}
+
+@mixin make-font-size($fs-font-size) {
+
+  @if type-of($fs-font-size) == "list" {
+  font-size: nth($fs-font-size, 1);
+
+  @if (length($fs-font-size) > 1) {
+    line-height: nth($fs-font-size, 2); }
+
+}
+
+@else {
+
+  font-size: $fs-font-size; }
+
+}
+
+
+// Headlines
+h1 {  @include font-size($h1-font-sizes);}
+
+h2 {  @include font-size($h2-font-sizes);}
+
+h3 {  @include font-size($h3-font-sizes);}
+
+h4 {  @include font-size($h4-font-sizes);}
+
+h5 {  @include font-size($h5-font-sizes);}
+
+h6 {  @include font-size($h6-font-sizes);}
+
+h1, h2, h3{
+	font-weight: normal;}
+
+
+// Paragraph
+p, a, ul, ol {   @include font-size($p-font-sizes);}
+
+a{
+  text-decoration: $link-decoration;
+	color:$link-color;
+
+	&:hover{
+		color: darken($link-color, 15); }
+}
+
+
+// Lists
+@mixin list-ul($list-sign: 'none') {
+
+  @if $list-sign == 'none' {
+    // if width is not passed, or empty do this
+
+  } @else {
+
+    list-style-type: none;
+
+    li{
+      position: relative;
+
+      &:before {
+					content: '#{($list-sign)}';
+					position: absolute;
+					left: -$list-style-paddign; }
+
+      }
+
+  }
+}
+
+ul{
+  @include list-ul("#{($list-style-icon)}"); }
+
+
+// Blackquote
+blockquote{
+	border-left: $blockquote-line-width solid $blockquote-line-color;
+	padding-left: $blockquote-line-padding;
+	margin-left: 0;  }
