@@ -1,3 +1,6 @@
+![GitHub Logo](customy.jpg)
+
+
 # Customy Framework
 
 Work in progress
