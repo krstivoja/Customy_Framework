@@ -1,4 +1,4 @@
-# Customy_Framework
+# Customy Framework
 
 Work in progress
 Scss framework made to be easy customized for every project.
@@ -8,3 +8,4 @@ Fill varialbes before you start with project (Grid, Font family, Font sizes etc)
 More to come…
 
 Thanks for be interested in my code.
+
